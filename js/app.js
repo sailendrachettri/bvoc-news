@@ -38,3 +38,5 @@ xhr.onload = function () {
 }
 xhr.send();
 
+
+// console.log("Js is working");
