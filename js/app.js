@@ -1,7 +1,7 @@
 let apiKey = "3104946bd90a4c738d1a1e4d7dc35012";
 // let source = "bbc-news";
 let source = "the-times-of-india";
-// let source = "in";
+// let source = "in";  
 
 let newsCards = document.getElementById('newsCards');
 
