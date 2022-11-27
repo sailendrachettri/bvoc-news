@@ -7,7 +7,7 @@ let newsCards = document.getElementById('newsCards');
 
 const xhr = new XMLHttpRequest();
 // xhr.open('GET', `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apiKey}`, true);
-xhr.open('POST', `https://newsapi.org/v2/top-headlines?country=${source}&apiKey=${apiKey}`, true);
+xhr.open('GET', `https://newsapi.org/v2/top-headlines?country=${source}&apiKey=${apiKey}`, true);
 
 xhr.onload = function () {
     if (this.status === 200) {
