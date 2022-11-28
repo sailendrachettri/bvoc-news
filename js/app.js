@@ -1,3 +1,5 @@
+
+// ________________________NEWS BOYD STARTED________________________
 let apiKey = "3104946bd90a4c738d1a1e4d7dc35012";
 // let source = "bbc-news";
 // let source = "the-times-of-india";
@@ -18,9 +20,20 @@ xhr.onload = function () {
         let newsHtml = "";
 
         articles.forEach(function (news) {
+            //if description is not present or too short
             if(news["description"] == null || news["description"].length < 10){
                 news["description"] = "Description is not avaliable for this news. Go to the main source by clicking below button.";
             }
+
+            // custom date formation
+            let date = news["publishedAt"].slice(0, 10).split("-");
+            date = date.reverse().join(".");
+
+            // let dateMonths = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            // if(date.slice(3, 5) === "11")
+            //     news["publishedAt"] = dateMonths[10];
+            // console.log(date.slice(3, 5));
+
 
             let newsCards = `<div class="col-sm-6 mt-4">
                                 <div class="card">
@@ -28,8 +41,8 @@ xhr.onload = function () {
                                         <h5 class="card-title" id="newsTitle">${news["title"]}</h5>
                                         <p class="card-text" id="newsDescription">${news["description"]}</p>
                                         <div class="d-flex justify-content-between">
-                                            <a href="${news["url"]}" target="_blank" class="btn btn-outline-primary" id="newsButton">Readmore</a>
-                                            <p id="newsDate">${news["publishedAt"].slice(0, 10)}</p>
+                                            <a href="${news["url"]}" target="_blank" class="btn btn-outline-dark" id="newsButton">Readmore</a>
+                                            <p id="newsDate">${date}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -44,6 +57,16 @@ xhr.onload = function () {
     }
 }
 xhr.send();
+// ________________________NEWS BOYD ENDED________________________
+
+// ________________________FOOTER STARTED________________________
+let footerYear = document.getElementById("footerYear");
+let date = new Date();
+let year = date.getFullYear();
+
+footerYear.innerText = year;
+// ________________________FOOTER ENDED________________________
+
 
 
 // console.log("Js is working");
