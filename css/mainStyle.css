@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Metrophobic&family=Quicksand&family=Saira+Condensed:wght@800&display=swap');
+
+
 body{
     background-image: linear-gradient(to top, #dfdfdf, #96f3b7, #cedff1)
+}
+
+#navbar{
+    font-family: 'Metrophobic', sans-serif;
+}
+
+#newsTitle{
+    font-family: 'Metrophobic', sans-serif;
+    font-weight: 800;
+}
+
+#newsDescription, #newsDate, #newsButton{
+    font-family: 'Quicksand', sans-serif;
 }
