@@ -18,7 +18,7 @@ xhr.onload = function () {
         let newsHtml = "";
 
         articles.forEach(function (news) {
-            if(news["description"] == null){
+            if(news["description"] == null || news["description"].length < 10){
                 news["description"] = "Description is not avaliable for this news. Go to the main source by clicking below button.";
             }
 
@@ -27,8 +27,6 @@ xhr.onload = function () {
                                     <div class="card-body">
                                         <h5 class="card-title" id="newsTitle">${news["title"]}</h5>
                                         <p class="card-text" id="newsDescription">${news["description"]}</p>
-                                        <!-- <div class="de-flex">
-                                        </div> -->
                                         <div class="d-flex justify-content-between">
                                             <a href="${news["url"]}" target="_blank" class="btn btn-outline-primary" id="newsButton">Readmore</a>
                                             <p id="newsDate">${news["publishedAt"].slice(0, 10)}</p>
