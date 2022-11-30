@@ -1,21 +1,18 @@
 
 // ________________________NEWS BOYD STARTED________________________
 let apiKey = "3104946bd90a4c738d1a1e4d7dc35012";
-// let source = "bbc-news";
-// let source = "the-times-of-india";
-let source = "in";  
+let newsCountry = "in";
+let newsCategory = "business";
 
 let newsCards = document.getElementById('newsCards');
 
 const xhr = new XMLHttpRequest();
-// xhr.open('GET', `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apiKey}`, true);
-xhr.open('GET', `https://newsapi.org/v2/top-headlines?country=${source}&apiKey=${apiKey}`, true);
+xhr.open('GET', `https://newsapi.org/v2/top-headlines?country=${newsCountry}&category=${newsCategory}&apiKey=${apiKey}`, true);
 
 xhr.onload = function () {
     if (this.status === 200) {
         let json = JSON.parse(this.responseText);
         let articles = json.articles;
-        // console.log(articles);
 
         let newsHtml = "";
 
@@ -58,15 +55,3 @@ xhr.onload = function () {
 }
 xhr.send();
 // ________________________NEWS BOYD ENDED________________________
-
-// ________________________FOOTER STARTED________________________
-let footerYear = document.getElementById("footerYear");
-let date = new Date();
-let year = date.getFullYear();
-
-footerYear.innerText = year;
-// ________________________FOOTER ENDED________________________
-
-
-
-// console.log("Js is working");
