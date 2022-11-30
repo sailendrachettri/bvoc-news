@@ -17,3 +17,7 @@ body{
 #newsDescription, #newsDate, #newsButton{
     font-family: 'Quicksand', sans-serif;
 }
+
+#newsBody{
+    min-height: 100vh;
+}
